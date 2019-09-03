@@ -1,0 +1,11 @@
+$base-font-size: 16px;
+
+body{
+  font-size: $base-font-size;
+}
+.main-table{
+  background: #3d3d3d;
+  th, td{
+    color: #fff;
+  }
+}
