@@ -25,7 +25,7 @@ public class Controller {
   @PostMapping(value="/addSmth", produces=MediaType.APPLICATION_JSON_VALUE)
   public String addWidget(){
     JSONParser jsonParser = new JSONParser();
-    File initialFile = new File("src/main/resources/json/channels.json");
+    File initialFile = new File("src/main/resources/json/db.json");
 
     try (FileReader reader = new FileReader(initialFile))
     {
