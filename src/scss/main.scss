@@ -1,50 +1,93 @@
 $base-font-size: 16px;
 
+/*::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+html {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}*/
+
 body{
   font-size: $base-font-size;
   overflow-x: auto;
   background-color: #111111;
+  margin: 0;
   .epg{
-    overflow-y: auto;
-    margin-right: 20px;
-    display: flex;
-    max-height: 920px;
-    width: 100%;
-    .channels-block{
-      .channel-entry{
-        height: 20px;
-        color: #fff;
-        margin-left: 50px;
-        margin-right: 10px;
-        background-color: #494949;
-        margin-bottom: 10px;
-        display: flex;
-        padding: 20px;
-        width: 240px;
-        .channel-number-block{
-          text-align: center;
-          width: 30%;
-        }
-        .channel-title-block{
-          text-align: center;
-          width: 70%;
+    .schedule{
+      overflow-y: hidden;
+      margin-right: 20px;
+      display: flex;
+      margin-top: 85px;
+      .timeline{
+        margin-left: 8px;
+        display: -webkit-inline-box;
+        position: absolute;
+        color: #ffffff;
+        top: 0;
+        .timeline-entry{
+          width: 720px;
+          text-align: left;
+          position: fixed;
+          height: 40px;
+          background-color: #111111;
+          z-index: 10;
+          padding-top: 20px;
         }
       }
-    }
-    .programs-block{
-      .program-row{
-        height: 60px;
-        margin-bottom: 10px;
-        display: flex;
-        white-space: nowrap;
-        .program-entry{
+      .vertical-line{
+        height: 835px;
+        width: 2px;
+        left: 1060px;
+        position: absolute;
+        background-color: white;
+        z-index: 5;
+      }
+      .channels-block{
+        background-color: #111111;
+        z-index: 1;
+        .channel-entry{
           height: 20px;
           color: #fff;
+          margin-left: 50px;
           margin-right: 10px;
-          background-color: #494949;
+          background-color: #919191;
           margin-bottom: 10px;
           display: flex;
           padding: 20px;
+          width: 240px;
+          .channel-number-block{
+            text-align: center;
+            width: 30%;
+          }
+          .channel-title-block{
+            text-align: center;
+            width: 70%;
+          }
+        }
+      }
+      .programs-block{
+        position: absolute;
+        left: 348px;
+        z-index: 0;
+        .program-row{
+          height: 60px;
+          margin-bottom: 10px;
+          white-space: nowrap;
+          .program-entry{
+            height: 20px;
+            position: absolute;
+            color: #fff;
+            margin-right: 1px;
+            background-color: #919191;
+            margin-bottom: 10px;
+            display: flex;
+            padding: 20px 0 20px 10px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+          }
         }
       }
     }
