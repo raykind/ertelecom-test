@@ -1,6 +1,6 @@
 $base-font-size: 16px;
 
-/*::-webkit-scrollbar {
+::-webkit-scrollbar {
   width: 0px;
   background: transparent;
 }
@@ -8,7 +8,7 @@ $base-font-size: 16px;
 html {
   -ms-overflow-style: none;
   scrollbar-width: none;
-}*/
+}
 
 body{
   font-size: $base-font-size;
@@ -16,6 +16,7 @@ body{
   background-color: #111111;
   margin: 0;
   .epg{
+
     .schedule{
       overflow-y: hidden;
       margin-right: 20px;
@@ -36,14 +37,6 @@ body{
           z-index: 10;
           padding-top: 20px;
         }
-      }
-      .vertical-line{
-        height: 835px;
-        width: 2px;
-        left: 1060px;
-        position: absolute;
-        background-color: white;
-        z-index: 5;
       }
       .channels-block{
         background-color: #111111;
@@ -67,11 +60,22 @@ body{
             width: 70%;
           }
         }
+        .active-row{
+          height: 160px !important;
+        }
       }
       .programs-block{
         position: absolute;
         left: 348px;
         z-index: 0;
+        padding-bottom: 50px;
+        .vertical-line{
+          height: 835px;
+          width: 2px;
+          position: absolute;
+          background-color: #ff0000;
+          z-index: 5;
+        }
         .program-row{
           height: 60px;
           margin-bottom: 10px;
@@ -87,9 +91,64 @@ body{
             padding: 20px 0 20px 10px;
             text-overflow: ellipsis;
             overflow: hidden;
+            cursor: pointer;
+          }
+          .active-program{
+            background-color: #f0f8ff !important;
+            color: #000 !important;
+          }
+          .current-time-program{
+            background-color: #b4b4b4;
+          }
+        }
+        .info-row{
+          height: 130px;
+          margin-bottom: 10px;
+          .info-content{
+            position: absolute;
+            color: #ffffff;
+            h2, div{
+              width: 1400px;
+              margin-top: 0;
+            }
+            span{
+              margin-right: 8px;
+            }
           }
         }
       }
     }
+  }
+  .footer{
+    position: fixed;
+    height: 65px;
+    width: 120%;
+    background-color: #111111;
+    left: -340px;
+    bottom: 0px;
+    z-index: 10;
+    .fixed{
+      position: fixed;
+      z-index: 10;
+    }
+    span{
+      color: white;
+      left: 600px;
+      display: flex;
+      margin-top: 13px;
+      h3{
+        margin: 0 20px 0 0;
+      }
+      i{
+        margin-right: 5px;
+      }
+    }
+  }
+  #goToNow{
+    bottom: 20px;
+    left: 400px;
+    padding: 10px;
+    border-radius: 13px;
+    background-color: #baffb2;
   }
 }

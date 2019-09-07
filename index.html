@@ -9,7 +9,6 @@
 <body>
   <div class="epg">
     <div class="schedule">
-      <div class="vertical-line"></div>
       <div class="timeline">
         <div class="timeline-entry">00:00</div>
         <div class="timeline-entry">00:30</div>
@@ -61,8 +60,14 @@
         <div class="timeline-entry">23:30</div>
       </div>
       <div class="channels-block"></div>
-      <div class="programs-block"></div>
+      <div class="programs-block">
+        <div class="vertical-line"></div>
+      </div>
     </div>
+  </div>
+  <div class="footer">
+    <input type="button" id="goToNow" value="К текущему моменту" class="fixed"/>
+    <span class="fixed"><h3>НАВИГАЦИЯ</h3> <i>alt </i>+ стрелочка </span>
   </div>
 </body>
 </html>
