@@ -5,7 +5,7 @@ let conf = {
   output: {
     path: path.resolve(__dirname, './dist'),
     filename: "main.js",
-    publicPath: "dist/"
+    publicPath: "/ertelecom-test/"
   },
   devServer: {
     overlay: true

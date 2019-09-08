@@ -12,6 +12,7 @@ html {
 
 body{
   font-size: $base-font-size;
+  font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
   overflow-x: auto;
   background-color: #111111;
   margin: 0;
@@ -34,22 +35,31 @@ body{
           position: fixed;
           height: 40px;
           background-color: #111111;
-          z-index: 10;
+          z-index: 1;
           padding-top: 20px;
+          font-size: 33px;
         }
       }
       .channels-block{
         background-color: #111111;
         z-index: 1;
+        .wall{
+          position: fixed;
+          width: 340px;
+          height: 60px;
+          top: 0;
+          z-index: 2;
+          background-color: #111111;
+        }
         .channel-entry{
-          height: 20px;
+          height: 10px;
           color: #fff;
           margin-left: 50px;
           margin-right: 10px;
           background-color: #919191;
           margin-bottom: 10px;
           display: flex;
-          padding: 20px;
+          padding: 10px 20px 20px 20px;
           width: 240px;
           .channel-number-block{
             text-align: center;
@@ -77,18 +87,17 @@ body{
           z-index: 5;
         }
         .program-row{
-          height: 60px;
-          margin-bottom: 10px;
+          height: 50px;
           white-space: nowrap;
           .program-entry{
-            height: 20px;
+            height: 10px;
             position: absolute;
             color: #fff;
             margin-right: 1px;
             background-color: #919191;
             margin-bottom: 10px;
             display: flex;
-            padding: 20px 0 20px 10px;
+            padding: 10px 0 20px 10px;
             text-overflow: ellipsis;
             overflow: hidden;
             cursor: pointer;
@@ -102,7 +111,7 @@ body{
           }
         }
         .info-row{
-          height: 130px;
+          height: 140px;
           margin-bottom: 10px;
           .info-content{
             position: absolute;
@@ -150,5 +159,6 @@ body{
     padding: 10px;
     border-radius: 13px;
     background-color: #baffb2;
+    cursor: pointer;
   }
 }
