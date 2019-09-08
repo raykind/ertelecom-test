@@ -14,6 +14,14 @@ window.onload = function () {
   document.addEventListener('keydown', arrowNavigate);
   loadChannels()
     .then(() => {
+      let channelEntries = document.getElementsByClassName('channel-entry');
+      for (let i = 0; i < channelEntries.length; i++){
+        let entry = channelEntries[i];
+        entry.addEventListener('click', () => {
+          clearSelectChannel();
+          entry.classList.add('active-channel');
+        })
+      }
       Promise.all([setTimeline(), loadPrograms()])
         .then(() => setEpgInNow())
     });
@@ -296,7 +304,7 @@ function toCurrentTime()
   consts.LEFT_BORDER = now;
 }
 /*
- * Очистка всех классов активности
+ * Очистка классов активности программ
  */
 function clearActive()
 {
@@ -305,6 +313,16 @@ function clearActive()
     infoRow.parentNode.removeChild(infoRow);
     document.getElementsByClassName('active-program')[0].classList.remove('active-program');
     document.getElementsByClassName('active-row')[0].classList.remove('active-row');
+  }
+}
+/*
+ * Очистка классов активностей каналов
+ */
+function clearSelectChannel()
+{
+  let actives = document.getElementsByClassName('active-channel');
+  for (let i = 0; i < actives.length; i++){
+    actives[i].classList.remove('active-channel');
   }
 }
 /*

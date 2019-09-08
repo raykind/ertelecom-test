@@ -43,6 +43,10 @@ body{
       .channels-block{
         background-color: #111111;
         z-index: 1;
+        .active-channel{
+          background-color: #f0f8ff !important;
+          color: #000 !important;
+        }
         .wall{
           position: fixed;
           width: 340px;
@@ -61,6 +65,7 @@ body{
           display: flex;
           padding: 10px 20px 20px 20px;
           width: 240px;
+          cursor: pointer;
           .channel-number-block{
             text-align: center;
             width: 30%;
